@@ -1,0 +1,4 @@
+exportPattern("^[[:alpha:]]+")
+importFrom(expm,expm)
+importFrom(expm,logm)
+importFrom(expm,sqrtm)
