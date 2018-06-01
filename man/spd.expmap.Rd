@@ -7,7 +7,7 @@
 spd.expmap(x, p = NULL)
 }
 \arguments{
-\item{x}{Either an symmetric matrix, or a list of symmetric matrices}
+\item{x}{Either a symmetric matrix, or a list of symmetric matrices}
 
 \item{p}{An spd matrix from whose tangent space to perform the projection. If
 unspecified, the identity matrix is chosen.}

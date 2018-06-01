@@ -24,6 +24,10 @@
 
 spd.mean <- function(x, method = 'euclidean'){
 
+    if (!'spd.list' %in% input.type(x)){
+        return('Invalid input type')
+    }
+
     if (method == 'euclidean'){
         return(Reduce(`+`, x)/length(x))
     }

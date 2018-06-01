@@ -12,6 +12,19 @@
 
 spd.logmap <- function(x, p = NULL){
 
+    # Verify input
+    input.check <- input.type(x)
+    if (!is.null(p)){
+        p.check <- input.type(p)
+        if (!'spd.mat' %in% p.check) {
+            stop('p is not spd')
+        }
+    }
+
+    if (!'spd.mat' %in% input.type(x) | !'spd.mat' %in% input.type(y)){
+        return('Both inputs must be positive definite matrices')
+    }
+
     if (is.null(p)){
         if (is.matrix(x)){
             p <- diag(rep(1, dim(x)[1]))

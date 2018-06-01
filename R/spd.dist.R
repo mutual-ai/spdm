@@ -17,8 +17,8 @@
 
 spd.dist <- function(x, y, method = 'riemannian'){
 
-    if (!all(is.spd(x, y))){
-        stop('Both inputs must be positive definite')
+    if (!'spd.mat' %in% input.type(x) | !'spd.mat' %in% input.type(y)){
+        return('Both inputs must be positive definite matrices')
     }
 
     if (method == 'frobenius'){

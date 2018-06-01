@@ -3,7 +3,7 @@
 #' Function projects one or more vectors onto
 #' the space of SPD matrices space at a point \code{p}
 #'
-#' @param x Either an symmetric matrix, or a list of symmetric matrices
+#' @param x Either a symmetric matrix, or a list of symmetric matrices
 #' @param p An spd matrix from whose tangent space to perform the projection. If
 #' unspecified, the identity matrix is chosen.
 #' @details Function uses the exponential map to project a set of symmetric
@@ -11,6 +11,19 @@
 
 
 spd.expmap <- function(x, p = NULL){
+
+    # Verify input
+    input.check <- input.type(x)
+    if (!is.null(p)){
+        p.check <- input.type(p)
+        if (!'spd.mat' %in% p.check) {
+            stop('p is not spd')
+        }
+    }
+
+    if (!'spd.mat' %in% input.type(x) | !'spd.mat' %in% input.type(y)){
+        return('Both inputs must be positive definite matrices')
+    }
 
     if (is.null(p)){
         if (is.matrix(x)){

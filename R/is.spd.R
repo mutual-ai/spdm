@@ -24,7 +24,7 @@ is.spd <- function(..., tol = 1e-8){
             return(FALSE)
         }
 
-        # Test if symmetrix
+        # Test if symmetric
         if (!isSymmetric(i, tol = tol)){
             return(FALSE)
         }
