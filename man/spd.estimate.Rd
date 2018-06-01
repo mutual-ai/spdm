@@ -15,9 +15,9 @@ spd.estimate(y, method = "threshold")
 A covariance matrix
 }
 \description{
-Functions performs regularized covariance estimation using either soft-thresholding
+Function performs regularized covariance estimation using either soft-thresholding
 or the graphical lasso, involving l1 penalized estimation of the inverse
 covariance (precision) matrix. In either case, the optimal tuning parameter
-is selected by cross-validation. Currently, the functions internals are set
+is selected by cross-validation. Currently, the function's internals are set
 to my own default settings, for simplicity.
 }

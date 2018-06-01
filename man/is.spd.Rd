@@ -4,10 +4,10 @@
 \alias{is.spd}
 \title{Check if a matrix is symmetric and positive definite}
 \usage{
-is.spd(x, tol = 1e-08)
+is.spd(..., tol = 1e-08)
 }
 \arguments{
-\item{x}{A numeric matrix}
+\item{...}{One or more numeric matrices}
 
 \item{tol}{Numerical tolerance for checking symmetry and positive definiteness}
 }
