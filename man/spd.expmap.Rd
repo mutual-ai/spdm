@@ -7,7 +7,7 @@
 spd.expmap(x, p = NULL)
 }
 \arguments{
-\item{x}{Either a symmetric matrix, or a list of symmetric matrices}
+\item{x}{A symmetric matrix}
 
 \item{p}{An spd matrix from whose tangent space to perform the projection. If
 unspecified, the identity matrix is chosen.}
@@ -17,6 +17,6 @@ Function projects one or more vectors onto
 the space of SPD matrices space at a point \code{p}
 }
 \details{
-Function uses the exponential map to project a set of symmetric
-matrices onto the space of SPD matrices at a matrix \code{p}.
+Function uses the exponential map to project a symmetric
+matrix onto the space of SPD matrices at a matrix \code{p}.
 }

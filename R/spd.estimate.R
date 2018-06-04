@@ -14,9 +14,7 @@
 spd.estimate <- function(y, method = 'threshold'){
 
     if (method == 'threshold'){
-        est <- regular.CV(y, k.grid = seq(0,1,.1),
-                          method = "SoftThresholding", fold = 5)
-        fit <- soft.thresholding(cov(y), c = est$CV.k[1])
+        fit <- pdsoft.cv(y)$sigma
     } else if (method == 'sparse') {
         n <- dim(y)[1]
         est <- huge(y, method = 'glasso', scr = T, scr.num = n/log(n),

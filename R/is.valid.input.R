@@ -61,7 +61,7 @@ input.type <- function(x){
     })
 
     if (!any(chk)){
-        stop('Invalid input type')
+        stop('Invalid input type. Probably, input matrix fails to be symmetric')
     } else {
         return(type[which(chk)])
     }

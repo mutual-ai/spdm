@@ -4,7 +4,7 @@
 \alias{spd.mean}
 \title{Compute the mean of a set of spd matrices}
 \usage{
-spd.mean(x, method = "euclidean")
+spd.mean(x, method = "euclidean", tol = 0.1, max.iter = 20)
 }
 \arguments{
 \item{x}{A list of symmetric, positive-definite matrices}

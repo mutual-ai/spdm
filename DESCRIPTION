@@ -7,7 +7,7 @@ Maintainer: Corson N. Areshenkoff <areshenk@protonmail.com>
 Description: Means, differencing, and centering for symmetric positive-definite matrices.
 Depends: R (>= 3.0.2),
          Rcpp (>= 0.12.0)
-Imports: expm, CVTuningCov, huge
+Imports: expm, PDSCE, huge
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

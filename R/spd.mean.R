@@ -22,7 +22,7 @@
 #' }
 #' @return The mean of the matrices in \code{x}.
 
-spd.mean <- function(x, method = 'euclidean'){
+spd.mean <- function(x, method = 'euclidean', tol = .1, max.iter = 20){
 
     if (!'spd.list' %in% input.type(x)){
         return('Invalid input type')
@@ -33,7 +33,7 @@ spd.mean <- function(x, method = 'euclidean'){
     }
 
     if (method == 'logeuclidean'){
-        logmean <- Reduce(`+`, spd.logmap(x))/length(x)
+        logmean <- Reduce(`+`, lapply(x, spd.logmap))/length(x)
         return(expm(logmean))
     }
 
@@ -48,8 +48,9 @@ spd.mean <- function(x, method = 'euclidean'){
         while (err > tol & iter <= max.iter){
 
             # Project onto tangent space at current mean estimate
-            proj <- spd.logmap(x, p = init)
+            proj <- lapply(x, spd.logmap, p = init)
             tan.mean <- Reduce(`+`, proj) / length(proj)
+            tan.mean <- (tan.mean + t(tan.mean))/2
 
             # Update mean estimate
             init <- spd.expmap(tan.mean, p = init)
@@ -57,6 +58,10 @@ spd.mean <- function(x, method = 'euclidean'){
             # Calculate error
             err <- norm(tan.mean, type = 'F')
             iter <- iter + 1
+        }
+
+        if (iter >= max.iter & err >= tol){
+            warning('Mean may not have converged')
         }
 
         return(init)

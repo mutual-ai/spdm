@@ -7,7 +7,7 @@
 spd.logmap(x, p = NULL)
 }
 \arguments{
-\item{x}{Either an spd matrix, or a list of spd matrices}
+\item{x}{An spd matrix}
 
 \item{p}{An spd matrix on whose tangent space to perform the projection. If
 unspecified, the identity matrix is chosen.}
@@ -17,6 +17,6 @@ Function projects one or more symmetric, positive-definite matrices onto
 the tangent space at a point \code{p}
 }
 \details{
-Function uses the log-map to project a set of symmetric, positive-definite
-matrices onto the tangent space of the positive cone at a matrix \code{p}.
+Function uses the log-map to project a symmetric, positive-definite
+matrix onto the tangent space of the positive cone at a matrix \code{p}.
 }
